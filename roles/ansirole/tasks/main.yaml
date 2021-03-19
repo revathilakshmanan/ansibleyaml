@@ -1,0 +1,21 @@
+- name: to create folder
+  file: 
+    path: "{{folder_path}}/{{item}}"
+    state: directory
+  loop:
+    - tomcat
+- name: to unarchive the tomcat
+  unarchiev:
+    src: /home/revathi/ansilab/apache-tomcat-8.5.63.tar.gz
+    dest: "{{folder_path}}/tomcat"
+- name: to copy the war
+  copy:
+    src: /home/revathi/ILP2.war
+    dest: "{{home_path}}/webapps"
+- name: to start tomcat
+  shell: "nohub {{home_path}}/bin/startup.sh"
+
+
+
+
+

@@ -1,0 +1,2 @@
+folder_path= /home/revathi/ansibletest
+home_path= "{{folder_path}}/tomcat/apache-tomcat-8.5.63"
